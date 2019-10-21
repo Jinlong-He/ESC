@@ -3,4 +3,5 @@
 class Model {
     std::list<Process*> processes;
     TopoGraph* topoGraph;
+    // todo: AtackModel and SecurityPropertyModel.
 };

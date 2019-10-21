@@ -1,20 +1,31 @@
 #include "iostream"
 #include <list>
 class Process;
-class State {
+
+class Vertex {
+private:
+    std::string name;
 };
 
 class Action {
 };
 
-class Transition {
-    State* from;
-    State* to;
+class GuardAction : public Action {
+};
+
+class NormalAction : public Action {
+};
+
+class Edge {
+private:
+    Vertex* from;
+    Vertex* to;
     std::list<Action*> actions;
 };
 
 class FiniteStateMachine {
-    std::list<State*> states;
-    std::list<Transition*> transitions;
+private:
+    std::list<Vertex*> vertexes;
+    std::list<Edge*> edges;
     Process* process;
 };
