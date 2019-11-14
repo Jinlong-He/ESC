@@ -7,11 +7,10 @@
 
 #ifndef Model_Edge_hpp
 #define Model_Edge_hpp
-#include <Vertex>
-#include <Guard>
-#include <Action>
 #include <list>
-#include <Process>
+#include "Vertex.hpp"
+#include "Guard.hpp"
+#include "Action.hpp"
 using std::list;
 
 namespace esc {
@@ -64,7 +63,7 @@ namespace esc {
     	void removeAllActions();
 
     	void removeFirstAction();
-	}
+	};
 }
 
 

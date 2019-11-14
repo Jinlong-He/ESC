@@ -9,31 +9,11 @@
 #define Model_FiniteStateMachine_hpp
 #include "iostream"
 #include <list>
-#include <Process>
-#include <Vertex>
-#include <Edge>
+#include "Vertex.hpp"
+#include "Edge.hpp"
 using std::string;
 
-//class Process;
-
-/*class Vertex {
-private:
-    string name;
-};
-
-class Action {
-};
-
-class Guard {
-};
-
-class Edge {
-private:
-    Vertex* from;
-    Vertex* to;
-    Guard* guard;
-    std::list<Action*> actions;
-};*/
+class Process;
 
 /// \brief FiniteStateMachine class
 namespace esc {

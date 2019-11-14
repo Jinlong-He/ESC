@@ -8,7 +8,7 @@
 #ifndef Model_Guard_hpp
 #define Model_Guard_hpp
 #include <string>
-using std::string
+using std::string;
 
 namespace esc {
 	class Guard {
@@ -19,7 +19,7 @@ namespace esc {
 		string getGuardName();
 
 		void setGuardByString(string _guard);
-	}
+	};
 }
 
 #endif /* Model_Guard_hpp */

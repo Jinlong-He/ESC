@@ -9,19 +9,20 @@
 #define Model_Vertex_hpp
 #include <string>
 #include <list>
-using std::string
+using std::string;
 using std::list;
 
 namespace esc{
+    class Edge;
+
 	/// \brief State in FSM.
 	class Vertex {
 	private:
 		string name; //< State Name
 		list<Edge*> nexts;
-
 	public:
 		/// constructor
-		Vertex(string _name) : name(_name), nexts(NULL) {}
+		Vertex(string _name) : name(_name) {}
 
 		Vertex(string _name, list<Edge*> _nexts) : name(_name), nexts(_nexts) {}
 
@@ -38,9 +39,7 @@ namespace esc{
 		{
 			return name;
 		}
-
-		
-	}
+	};
 }
 
 #endif /* Model_Vertex_hpp */
