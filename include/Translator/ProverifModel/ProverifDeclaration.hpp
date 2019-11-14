@@ -18,6 +18,7 @@ namespace esc {
 
   public:
     ProverifDeclaration();
+    string getDeclaration();
   };
 }
 

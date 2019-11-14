@@ -13,13 +13,17 @@
 using std::string;
 
 namespace esc {
+  /// \brief BeagleTranslator
     class BeagleTranslator : public Translator {
     private:
-      BeagleModel* beagleModel;
+      BeagleModel* beagleModel; //< Beagle Model in Translator
     public:
       BeagleTranslator();
-      BeagleModel* generateBeagle();
-      bool saveInFile(string path);
+      BeagleModel* generateBeagle(); // Model => BeagleModel
+      void makeHeader(); // get the Beagle Model Header
+      void makeModules(); // translate each process into Beagle Module.
+      void getProperties(); // get the safety properties in the Beagle Model.
+      bool saveInFile(string path); // save the Beagle Model into the path file.
     };
 }
 
