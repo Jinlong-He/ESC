@@ -7,9 +7,9 @@
 
 #ifndef Model_Model_hpp
 #define Model_Model_hpp 
-#include "Process.hpp"
-#include "Property.hpp"
-#include "InitialKnowledge.hpp"
+#include "Process/Process.hpp"
+#include "Pragma/Property.hpp"
+#include "Pragma/InitialKnowledge.hpp"
 
 namespace esc {
     /// \brief the model in esc.

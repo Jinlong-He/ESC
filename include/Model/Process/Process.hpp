@@ -9,7 +9,7 @@
 #define Model_Process_hpp 
 #include "Method.hpp"
 #include "Signal.hpp"
-#include "FiniteStateMachine.hpp"
+#include "../FiniteStateMachine/FiniteStateMachine.hpp"
 
 namespace esc {
     class Model;

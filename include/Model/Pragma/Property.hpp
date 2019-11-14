@@ -7,7 +7,7 @@
 
 #ifndef Model_Property_hpp
 #define Model_Property_hpp 
-#include "Process.hpp"
+#include "../Process/Process.hpp"
 
 namespace esc {
     class Property {

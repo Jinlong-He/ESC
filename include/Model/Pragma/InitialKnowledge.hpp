@@ -7,7 +7,7 @@
 
 #ifndef Model_InitialKnowledge_hpp
 #define Model_InitialKnowledge_hpp 
-#include "Process.hpp"
+#include "../Process/Process.hpp"
 
 namespace esc {
     class InitialKnowledge {
