@@ -15,7 +15,7 @@ namespace esc {
   public:
     GuardEmpty();
     bool isGuarded(){return false;}
-  }
+  };
 }
 
 

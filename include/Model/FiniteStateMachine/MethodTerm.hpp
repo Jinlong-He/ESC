@@ -7,14 +7,18 @@
 
 #ifndef Model_MethodTerm_hpp
 #define Model_MethodTerm_hpp
+<<<<<<< HEAD
 #include "AssignmentTerm.hpp"
+=======
+>>>>>>> 9c3173995464baf980ecefade680a3675b3afa8f
 #include <list>
 #include <string>
+#include "Term.hpp"
+#include "../Process/Method.hpp"
 
 using std::list;
 using std::string;
 
-class Method {}
 
 namespace esc {
   /// \breif the method term in the action
@@ -26,14 +30,19 @@ namespace esc {
   public:
     MethodTerm();
     MethodTerm(Method* _method, list<Term*> _args);
-    MethodTerm* createFromString(string toParse); // create a method term from string.
+    MethodTerm(const string& toParse); // create a method term from string.
+
     Method* getMethod();
-    list<Term*> getArgs();
+    const list<Term*>& getArgs() const;
+
     bool isAMethodCall() {return true;};
     bool isAVariableSetting() {return false;};
     bool isLeftHand() {return false;} // method term can be only appear in the rightHand of the action.
-    string toString();
     bool containMethodCall() {return true;}
+<<<<<<< HEAD
+=======
+    string toString();
+>>>>>>> 9c3173995464baf980ecefade680a3675b3afa8f
   };
 }
 
