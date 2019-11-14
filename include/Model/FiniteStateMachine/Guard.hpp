@@ -15,7 +15,6 @@ namespace esc {
 	class Guard {
 	private:
 		string name; //< guard name.
-
 	public:
 		Guard();
 		Guard* createFromString(string _guard);

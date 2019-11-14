@@ -8,19 +8,22 @@
 #ifndef Model_AttributeTerm_hpp
 #define Model_AttributeTerm_hpp
 #include "Term.hpp"
-
-class Attribute;
+#include "../Process/Attribute.hpp"
 
 namespace esc {
   /// \breif the attribute term in the action
   class AttributeTerm : public Term {
   private:
-    Attribute* attribute; //< attribute of the term
+    Attribute* attribute;       //< attribute of the term
   public:
+    AttributeTerm();
+    AttributeTerm(Attribute* _attribute);
+    AttributeTerm(const string& toParse);
+
     bool isAMethodCall();
     bool isAVariableSetting();
     bool containAMethodCall();
-  }
+  };
 }
 
 #endif /* Model_AttributeTerm_hpp */

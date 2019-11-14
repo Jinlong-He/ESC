@@ -16,7 +16,7 @@ namespace esc {
     GuardElse();
     Guard* getRealGuard();
     bool isElseGuard() {return true;}
-  }
+  };
 }
 
 #endif /* Model_GuardElse_hpp */

@@ -7,22 +7,20 @@
 
 #ifndef Model_FiniteStateMachine_hpp
 #define Model_FiniteStateMachine_hpp
-#include "iostream"
 #include <list>
 #include "Vertex.hpp"
 #include "Edge.hpp"
 using std::string;
-
-class Process;
-
-/// \brief FiniteStateMachine class
 namespace esc {
+    class Process;
+
+    /// \brief FiniteStateMachine class
 	class FiniteStateMachine {
 	private:
-    	std::list<Vertex*> vertexes; //< the set of the states of this fsm.
-    	std::list<Edge*> edges; //< the set of the transitions of this fsm.
-    	Vertex startVertex; //< record the start state of this fsm.
-    	Process* process; //< the FiniteStateMachine belongs to the process.
+    	std::list<Vertex*> vertexes;    //< the set of the states of this fsm.
+    	std::list<Edge*> edges;         //< the set of the transitions of this fsm.
+    	Vertex* startVertex;            //< record the start state of this fsm.
+    	Process* process;               //< the FiniteStateMachine belongs to the process.
 	};
 }
 #endif /* Model_FiniteStateMachine_hpp */
