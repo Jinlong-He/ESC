@@ -9,8 +9,7 @@
 #define Translator_ProverifTranslator_hpp
 #include "Translator.hpp"
 #include "ProverifModel/ProverifModel.hpp"
-#include "../Model/Pragma/InitialKonwledge.hpp"
-#include <stirng>
+#include <string>
 using std::string;
 
 namespace esc {
@@ -20,8 +19,8 @@ namespace esc {
     ProverifModel* proverifModel; //< Proverif Model in Translator
   public:
     ProverifTranslator();
-    ProverifModel* generateProverif(); // Model => ProverifModel
-    void makingStartingProcess(); // get the initialKnowledge and make the start process
+    ProverifModel* generateProverif(); // Model => ProverifModel.
+    void makingStartingProcess(); // get the initialKnowledge and make the start process.
     void makeHeader(); // make the header of the proverif model which includes func, reduc func, attacker queries and evnet queries declarations.
     void makeBlocks(); // translate each process into proverif model.
     bool saveinFile(string path); // save the proverif model into the path file.
