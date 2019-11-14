@@ -11,15 +11,15 @@
 #include "SdVertex.hpp"
 using std::list;
 
-/// \brief SequenceDiagram class
 namespace esc {
     class Model;
 
+    /// \brief SequenceDiagram class
 	class SequenceDiagram {
     public:
 		SdVertex* mkSdVertex(string _name, Process* _process);
 	private:
-    	list<SdVertex*> vertexes;       //< the set of the states of this fsm.
+    	list<SdVertex*> vertexes;       //< the set of the states of this sd.
         SdVertex* startVertex;          //< the start vertex.
     	Model* model;                   //< the SequenceDiagram belongs to the model.
 	};
