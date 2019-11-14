@@ -17,17 +17,11 @@ namespace esc {
 	private:
 
 	public:
-<<<<<<< HEAD
-		Term(string _name){}
-		Term* createFromString(string toParse); //< create a term from string.
-		bool isValidName(string _name);
-		bool containAMethodCall(); //< check if the term has a MethodTerm subclass.
-=======
 		Term(const string& toParse);
 
-		virtual bool isValidName(string _name) = 0;
-		virtual bool containAMethodCall() = 0; //< check if the term has a MethodTerm subclass.
->>>>>>> 9c3173995464baf980ecefade680a3675b3afa8f
+		bool isValidName(string _name);
+		bool containAMethodCall(); //< check if the term has a MethodTerm subclass.
+
 	};
 }
 

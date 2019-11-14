@@ -14,7 +14,9 @@ namespace esc {
   class GuardEmpty : public Guard {
   public:
     GuardEmpty();
-    bool isGuarded(){return false;}
+    GuardEmpty(const string& toParse);
+
+    string to_stirng() const;
   };
 }
 

@@ -14,11 +14,11 @@ namespace esc {
 	/// \brief Guard condition on the transition.
 	class Guard {
 	private:
-		string name; //< guard name.
 	public:
 		Guard();
-		Guard* createFromString(string _guard);
-		string getGuardName();
+        Guard(const string& toParse);
+
+        virtual string to_stirng() const;
 	};
 }
 

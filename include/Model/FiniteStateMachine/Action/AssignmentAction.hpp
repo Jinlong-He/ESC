@@ -11,11 +11,14 @@
 namespace esc {
   /// \brief the AssignmentTerm contains AttributeTerm and MethodTerm.
   class AssignmentAction : public Action {
+  private:
+		AttributeTerm* lhs;     //< leftHand of the assignment
+		Term* rhs;              //< rightHand can be an attribute or a method call.
   public:
     AssignmentAction();
-    virtual bool isAMethodCall();
-    virtual bool isAVariableSetting();
-    virtual bool isLeftHand();
+    AssignmentAction(const string& toParse);
+
+    string to_stirng() const;
   };
 }
 

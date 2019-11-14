@@ -14,8 +14,9 @@ namespace esc {
   class GuardElse : public Guard {
   public:
     GuardElse();
-    Guard* getRealGuard();
-    bool isElseGuard() {return true;}
+    GuardElse(const string& toParse);
+
+    string to_stirng() const;
   };
 }
 

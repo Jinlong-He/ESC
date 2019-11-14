@@ -7,23 +7,13 @@
 
 #ifndef Model_MethodTerm_hpp
 #define Model_MethodTerm_hpp
-<<<<<<< HEAD
-#include "AssignmentTerm.hpp"
-=======
->>>>>>> 9c3173995464baf980ecefade680a3675b3afa8f
-#include <list>
-#include <string>
 #include "Term.hpp"
-#include "../Process/Method.hpp"
-
-using std::list;
-using std::string;
-
+#include "../../Process/Method.hpp"
 
 namespace esc {
   /// \breif the method term in the action
   /// \breif the metho term can be a method with a series of args.
-  class MethodTerm : public AssignmentTerm {
+  class MethodTerm : public Term {
   private:
     list<Term*> args; //< the args in the method term
     Method* method; //< the method in the method term
@@ -39,11 +29,9 @@ namespace esc {
     bool isAVariableSetting() {return false;};
     bool isLeftHand() {return false;} // method term can be only appear in the rightHand of the action.
     bool containMethodCall() {return true;}
-<<<<<<< HEAD
-=======
-    string toString();
->>>>>>> 9c3173995464baf980ecefade680a3675b3afa8f
+    string to_stirng() const;
   };
 }
+
 
 #endif /* Model_MethodTerm_hpp */

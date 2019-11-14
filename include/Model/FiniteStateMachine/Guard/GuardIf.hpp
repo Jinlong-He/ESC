@@ -8,7 +8,7 @@
 #ifndef Model_GuardIf_hpp
 #define Model_GuardIf_hpp
 #include "Guard.hpp"
-#include "Expression.hpp"
+#include "../Expression.hpp"
 
 namespace esc {
   /// \breif GuardIf contains an expression condition.
@@ -17,10 +17,12 @@ namespace esc {
     Expression* expression;
   public:
     GuardIf();
+    GuardIf(const string& toParse);
     GuardIf(Expression* _expression);
 
     Expression* getGuardExpression();
     void setGuardExpression(Expression* _expression);
+    string to_stirng() const;
   };
 }
 
