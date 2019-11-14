@@ -37,4 +37,6 @@ private:
     std::list<Signal*> signals;         ///< the signals for this process.
     FiniteStateMachine* fst;            ///< the finite state machine for this process.
     Model* model;                       ///< the model contains this process.
+public:
 };
+
