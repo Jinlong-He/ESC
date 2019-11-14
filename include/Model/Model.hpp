@@ -10,6 +10,7 @@
 #include "Process/Process.hpp"
 #include "Pragma/Property.hpp"
 #include "Pragma/InitialKnowledge.hpp"
+#include "SequenceDiagram/SequenceDiagram.hpp"
 
 namespace esc {
     /// \brief the model in esc.
@@ -35,6 +36,7 @@ namespace esc {
         list<Process*> processes;
         list<Property*> properties;
         list<InitialKnowledge*> initialKnowledges;
+        SequenceDiagram* sd;
     };
 }
 
