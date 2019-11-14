@@ -10,7 +10,19 @@
 #include "Type.hpp"
 
 namespace esc {
+    /// \brief the attribute of process.
     class Attribute {
+    public:
+        Attribute();
+
+        Attribute(Type* _type, const string& _identifier);
+
+        Type* getType() const;
+        void setType(Type* _type);
+
+        const string& getIdentifier() const;
+        void setIdentifier(const string& _identifier);
+
     private:
         Type* type;
         string identifier;

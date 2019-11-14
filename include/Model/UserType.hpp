@@ -14,22 +14,21 @@
 using std::list;
 
 namespace esc {
-
+    /// \brief the user defined data type of process.
     class UserType : public Type {
     public:
-        UserType() {}
+        UserType();
+        UserType(const string& _name, list<Attribute*> _parameters);
 
-        UserType(const string& str, list<Attribute*> list)
-            : name(str),
-              types(list) {}
+        const string& getName() const;
+        void setName(const string& _name) ;
 
-        string getName() const {
-            return name;
-        }
+        const list<Attribute*>& getTypes() const;
+        void setTypes(const list<Attribute*> _types);
 
     private:
-        string name;
-        list<Attribute*> types;
+        string name;                //< the name of this type.
+        list<Attribute*> types;     //< the attribute list of this type.
     };
 }
 

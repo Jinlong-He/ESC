@@ -11,28 +11,25 @@
 using std::string;
 
 namespace esc {
-    class Attribute;
-
-    /// \brief 
+    /// \brief the data type of process.
     class Type {
     public:
-        virtual string getName() const = 0;
+        /// \brief Gets the name of type.
+        /// \return string.
+        virtual const string& getName() const = 0;
     };
 
+    /// \brief the bool data type of process.
     class BoolType : public Type {
     public:
-        string getName() const {
-            return "bool";
-        }
+        const string& getName() const;
     };
 
+    /// \brief the int data type of process.
     class IntType : public Type {
     public:
-        string getName() const {
-            return "int";
-        }
+        const string& getName() const;
     };
-
 }
 
 #endif /* Model_Type_hpp */
