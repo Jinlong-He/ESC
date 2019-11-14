@@ -21,7 +21,7 @@ namespace esc {
 
   public:
     Expression();
-    EXpression(string _expression);
+    Expression(string _expression);
     Expression(Expression* _expressionA);
     Expression(Expression* _expressionA, Expression* _expressionB, string _binaryOp);
     Expression* getExpressionA();

@@ -7,12 +7,12 @@
 
 #ifndef Model_AssignmentTerm_hpp
 #define Model_AssignmentTerm_hpp
-#include "Term.hpp"
+#include "Action.hpp"
 namespace esc {
   /// \brief the AssignmentTerm contains AttributeTerm and MethodTerm.
-  class AssignmentTerm : public Term {
+  class AssignmentAction : public Action {
   public:
-    AssignmentTerm();
+    AssignmentAction();
     virtual bool isAMethodCall();
     virtual bool isAVariableSetting();
     virtual bool isLeftHand();

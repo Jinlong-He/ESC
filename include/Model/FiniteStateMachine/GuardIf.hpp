@@ -18,9 +18,10 @@ namespace esc {
   public:
     GuardIf();
     GuardIf(Expression* _expression);
+
     Expression* getGuardExpression();
     void setGuardExpression(Expression* _expression);
-  }
+  };
 }
 
 #endif /* Model_GuardIf_hpp */
