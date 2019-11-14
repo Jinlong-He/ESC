@@ -8,9 +8,21 @@
 #ifndef Model_Term_hpp
 #define Model_Term_hpp
 
+#include <string>
+
+using std::string;
+
 namespace esc {
+	/// \breif the term in the action has two inheritance class AttributeTerm and MethodTerm.
 	class Term {
-		
+	private:
+		string name; //< term name.
+
+	public:
+		Term(string _name){}
+		Term* createFromString(string toParse); //< create a term from string.
+		bool isValidName(string _name);
+		bool containAMethodCall(); //< check if the term has a MethodTerm subclass.
 	}
 }
 

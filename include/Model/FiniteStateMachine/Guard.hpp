@@ -11,14 +11,15 @@
 using std::string;
 
 namespace esc {
+	/// \brief Guard condition on the transition.
 	class Guard {
 	private:
-		string name;
+		string name; //< guard name.
 
 	public:
+		Guard();
+		Guard* createFromString(string _guard);
 		string getGuardName();
-
-		void setGuardByString(string _guard);
 	};
 }
 

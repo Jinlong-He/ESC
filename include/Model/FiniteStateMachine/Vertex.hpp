@@ -22,6 +22,8 @@ namespace esc{
 		list<Edge*> nexts;
 	public:
 		/// constructor
+    Vertex();
+
 		Vertex(string _name) : name(_name) {}
 
 		Vertex(string _name, list<Edge*> _nexts) : name(_name), nexts(_nexts) {}
