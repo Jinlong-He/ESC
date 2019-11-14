@@ -23,7 +23,7 @@ namespace esc {
 		Term* createFromString(string toParse); //< create a term from string.
 		bool isValidName(string _name);
 		bool containAMethodCall(); //< check if the term has a MethodTerm subclass.
-	}
+	};
 }
 
 #endif /* Model_Term_hpp */

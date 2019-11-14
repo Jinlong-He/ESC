@@ -13,7 +13,7 @@ class Attribute;
 
 namespace esc {
   /// \breif the attribute term in the action
-  class AttributeTerm : public Term {
+  class AttributeTerm : public AssignmentTerm {
   private:
     Attribute* attribute; //< attribute of the term
   public:

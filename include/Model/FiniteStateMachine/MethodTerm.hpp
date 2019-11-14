@@ -7,7 +7,7 @@
 
 #ifndef Model_MethodTerm_hpp
 #define Model_MethodTerm_hpp
-#include "Term.hpp"
+#include "AssignmentTerm.hpp"
 #include <list>
 #include <string>
 
@@ -19,7 +19,7 @@ class Method {}
 namespace esc {
   /// \breif the method term in the action
   /// \breif the metho term can be a method with a series of args.
-  class MethodTerm : public Term {
+  class MethodTerm : public AssignmentTerm {
   private:
     list<Term*> args; //< the args in the method term
     Method* method; //< the method in the method term
@@ -34,7 +34,7 @@ namespace esc {
     bool isLeftHand() {return false;} // method term can be only appear in the rightHand of the action.
     string toString();
     bool containMethodCall() {return true;}
-  }
+  };
 }
 
 #endif /* Model_MethodTerm_hpp */
