@@ -12,8 +12,8 @@
 using std::string;
 using std::list;
 
-namespace esc{
-    class Edge;
+namespace esc {
+	class Edge;
 
 	/// \brief State in FSM.
 	class Vertex {
@@ -22,7 +22,7 @@ namespace esc{
 		list<Edge*> nexts;
 	public:
 		/// constructor
-    Vertex();
+		Vertex();
 
 		Vertex(string _name) : name(_name) {}
 
