@@ -63,21 +63,24 @@ namespace esc {
             }
             //-----Methods-----
             std::string generateProcMethods(const Process* proc){
-                // generate method
+                // generate methods of proc
             }
             //-----FINAL-----
-            std::string generateSimCCode(std::string path, std::list<Process*> procs){
+            void generateSimCCode(std::string path, std::list<Process*> procs){
                 // generate c code for simulation
-                // 1. for each process of Model generate a file proc.h
+                // 1. for each process of Model generate a file proc.h and proc.c
+                int i = 0;
                 //loop 
-                    this->generateProcFile()
+                    this->generateHeaderFile(path, procs[i]);
+                    this->generateProcFile(path, procs[i]);
                 //endloop
                 // 2. 
             }
             
         public: 
-            void generateCode() {
-                //todo
+            void generateCode(std::string path) {
+                //TODO
+                this->generateSimCCode(path);
             }
     };
 }

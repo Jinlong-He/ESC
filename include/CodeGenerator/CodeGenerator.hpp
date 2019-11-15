@@ -16,7 +16,9 @@ namespace esc {
             Model* model;
         public:
             Model* getModel() const;
-            virtual void generateCode() = 0;
+            virtual void generateCode(path){
+                
+            }
     };
 }
 
