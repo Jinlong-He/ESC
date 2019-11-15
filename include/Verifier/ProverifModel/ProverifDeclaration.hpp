@@ -5,8 +5,8 @@
 //  Copyright © 2019 All rights reserved.
 //
 
-#ifndef Translator_ProverifDeclaration_hpp
-#define Translator_ProverifDeclaration_hpp
+#ifndef Verifier_ProverifDeclaration_hpp
+#define Verifier_ProverifDeclaration_hpp
 #include <string>
 using std::string;
 
@@ -22,4 +22,4 @@ namespace esc {
   };
 }
 
-#endif /* Translator_ProverifDeclaration_hpp */
+#endif /* Verifier_ProverifDeclaration_hpp */

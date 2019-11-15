@@ -5,8 +5,8 @@
 //  Copyright © 2019 All rights reserved.
 //
 
-#ifndef Translator_ProverifVar_hpp
-#define Translator_ProverifVar_hpp
+#ifndef Verifier_ProverifVar_hpp
+#define Verifier_ProverifVar_hpp
 #include <string>
 using std::string;
 
@@ -25,4 +25,4 @@ namespace esc {
   };
 }
 
-#endif /* Translator_ProverifVar_hpp */
+#endif /* Verifier_ProverifVar_hpp */

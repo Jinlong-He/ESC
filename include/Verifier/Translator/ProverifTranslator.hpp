@@ -5,10 +5,10 @@
 //  Copyright © 2019 All rights reserved.
 //
 
-#ifndef Translator_ProverifTranslator_hpp
-#define Translator_ProverifTranslator_hpp
+#ifndef Verifier_ProverifTranslator_hpp
+#define Verifier_ProverifTranslator_hpp
 #include "Translator.hpp"
-#include "ProverifModel/ProverifModel.hpp"
+#include "../ProverifModel/ProverifModel.hpp"
 #include <string>
 using std::string;
 
@@ -27,4 +27,4 @@ namespace esc {
   };
 }
 
-#endif /* Translator_ProverifTranslator_hpp */
+#endif /* Verifier_ProverifTranslator_hpp */

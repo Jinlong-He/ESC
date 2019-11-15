@@ -5,9 +5,9 @@
 //  Copyright © 2019 All rights reserved.
 //
 
-#ifndef Translator_Translator_hpp
-#define Translator_Translator_hpp
-#include "../Model/Model.hpp"
+#ifndef Verifier_Translator_hpp
+#define Verifier_Translator_hpp
+#include "../../Model/Model.hpp"
 
 namespace esc {
   class Translator {
@@ -22,4 +22,4 @@ namespace esc {
   };
 }
 
-#endif /* Translator_Translator_hpp */
+#endif /* Verifier_Translator_hpp */

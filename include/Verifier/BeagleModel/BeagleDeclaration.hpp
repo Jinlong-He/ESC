@@ -5,8 +5,8 @@
 //  Copyright © 2019 All rights reserved.
 //
 
-#ifndef Translator_BeagleDeclaration_hpp
-#define Translator_BeagleDeclaration_hpp
+#ifndef Verifier_BeagleDeclaration_hpp
+#define Verifier_BeagleDeclaration_hpp
 #include <string>
 using std::string;
 
@@ -22,4 +22,4 @@ namespace esc{
   };
 }
 
-#endif /* Translator_BeagleDeclaration_hpp */
+#endif /* Verifier_BeagleDeclaration_hpp */

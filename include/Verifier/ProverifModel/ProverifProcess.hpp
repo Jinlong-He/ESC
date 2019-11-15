@@ -5,8 +5,8 @@
 //  Copyright © 2019 All rights reserved.
 //
 
-#ifndef Translator_ProverifProcess_hpp
-#define Translator_ProverifProcess_hpp
+#ifndef Verifier_ProverifProcess_hpp
+#define Verifier_ProverifProcess_hpp
 #include <string>
 #include <list>
 #include "ProverifVar.hpp"
@@ -25,4 +25,4 @@ namespace esc {
     string getName();
   };
 }
-#endif /* Translator_ProverifProcess_hpp */
+#endif /* Verifier_ProverifProcess_hpp */

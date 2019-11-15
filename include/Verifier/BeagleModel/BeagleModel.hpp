@@ -5,8 +5,8 @@
 //  Copyright © 2019 All rights reserved.
 //
 
-#ifndef Translator_BeagleModel_hpp
-#define Translator_BeagleModel_hpp
+#ifndef Verifier_BeagleModel_hpp
+#define Verifier_BeagleModel_hpp
 #include "BeagleModule.hpp"
 #include "BeagleProperty.hpp"
 #include "BeagleDeclaration.hpp"
@@ -22,11 +22,11 @@ namespace esc {
     list<BeagleDeclaration*> declarations; //< declarations in the Beagle model.
   public:
     BeagleModel();
-
+    BeagleModel(list<BeagleModule*> _modules, list<BeagleProperty*> _properties, list<BeagleDeclaration*> _declarations);
     void addModule(BeagleModule* _module);
     void addProperties(BeagleProperties _property);
-    void addDeclaration(BeagleDeclaration* _d);
+    void addDeclaration(BeagleDeclaration* _declarations);
   };
 }
 
-#endif /* Translator_BeagleModel_hpp */
+#endif /* Verifier_BeagleModel_hpp */

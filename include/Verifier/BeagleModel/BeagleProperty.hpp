@@ -5,13 +5,13 @@
 //  Copyright © 2019 All rights reserved.
 //
 
-#ifndef Translator_BeagleProperty_hpp
-#define Translator_BeagleProperty_hpp
+#ifndef Verifier_BeagleProperty_hpp
+#define Verifier_BeagleProperty_hpp
 
 namespace esc {
   class BeagleProperty {
-    
+
   };
 }
 
-#endif /* Translator_BeagleProperty_hpp */
+#endif /* Verifier_BeagleProperty_hpp */
