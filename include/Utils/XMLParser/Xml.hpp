@@ -19,7 +19,7 @@ namespace esc {
 	class Xml {
 	private:
 		XmlNode* root;
-		Dtd* dtd;
+		Dtd* dtd = nullptr;
 	public:
 		Xml(const string& filePath);
 	};
