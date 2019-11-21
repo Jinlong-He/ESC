@@ -1,0 +1,108 @@
+<!DOCTYPE xml>
+<!--每个XML文件对应一个模型-->
+<!--以下id都是系统分配，name都是用户指定，对不需指定name的标签才分配id-->
+<xml>
+  <!--每个模型有若干Process-->
+  <Process name="B">
+  </Process>
+  <Process name="A">
+    <!--每个Process有若干Attribute-->
+    <Attribute name="m1" type="Msg"/>
+    <Attribute name="pk_B" type="Key"/>
+    <Attribute name="sk_A" type="Key"/>
+    <Attribute name="NA" type="int"/>
+    <Attribute name="m" type="Msg"/>
+    <!--每个Process有若干Signal。Msg是一个类型-->
+    <!--外面定义Relation，绑定两个进程的send和recv函数-->
+    <CommMethod name="send_to_b" inout="out" param_type="Msg"/>
+    <CommMethod name="recv_from_b" inout="in" param_type="Msg"/>
+    <!--每个Process可以使用若干个Method-->
+    <Method name="enc" return_type="Msg" algorithm_id="SHA256">
+      <!--name="xx"是形参名字，在用户自己插入代码时会使用到-->
+      <Param type="Key" name="key"/>
+      <Param type="Msg" name="msg"/>
+      <UserCode>
+        <!--如果是用户自定义的Method，这里就放代码内容字符串-->
+      </UserCode>
+    </Method>
+    <!--每个Process可以有分离定义的若干子自动机-->
+    <StateMachine name="Recv_Do" initial_state="recv1_msg">
+      <State name="recv1_msg"/>
+      <State name="do"/>
+      <State name="send1_msg"/>
+      <Transition from="recv1_msg" to="do">
+        <Guard content=""/>
+        <!--每个Action的表达式暂时不允许嵌套，把表达式做成AST-->
+        <Action content="recv_from_b(m1)"/>
+        <Action content="m2=dec(m1,sk_A)"/>
+        <Action content="NA1=get2(m2)"/>
+      </Transition>
+      <Transition from="do" to="send1_msg">
+        <Guard content="NA1==NA"/>
+        <Action content="m3=enc(m,pb_B)"/>
+      </Transition>
+    </StateMachine>
+    <StateMachine name="Send" initial_state="send1_msg">
+      <State name="send1_msg"/>
+      <State name="end"/>
+      <Transition from="send1_msg" to="end">
+        <Guard content=""/>
+        <Action content="send_to_b(m3)"/>
+      </Transition>
+    </StateMachine>
+  </Process>
+  <!--每个模型有若干AttackTree-->
+  <!--用户画攻击树，圆的结点是Attack，方的是Relation-->
+  <AttackTree name="用户自定" root_attack="r">
+    <!--攻击结点-->
+    <Attack name="r" enable=""></Attack>
+    <Attack name="a" enable="false">
+      <!--content里放用户的自然语言描述-->
+    </Attack>
+    <Attack name="b" enable="true"></Attack>
+    <Attack name="c" enable="true"></Attack>
+    <!--关系结点-->
+    <Relation type="or" father="r">
+      <Child name="a"/>
+      <Child name="b"/>
+      <Child name="c"/>
+    </Relation>
+    <Relation type="neg" father="b">
+      <Child name="c"/>
+    </Relation>
+  </AttackTree>
+  <!--每个模型有若干Channel，是连接两个Process的Communication的信道-->
+  <Channel id="0"
+           fromProess="A" fromMethod="send_to_B"
+           toProcess="B" toMethod="recv_from_A"/>
+  <!--SequenceDiagram先不做-->
+  <SequenceDiagram></SequenceDiagram>
+  <!--每个模型只有一个拓扑图(指定一个拓扑结构来做验证)-->
+  <!--比如有很多路由器，用的都是一份路由协议，也就是Process一样-->
+  <TopoGraph name="">
+    <!--路由器结点，这里0和1其内部是同样的进程A-->
+    <Node id="0" process="A"/>
+    <Node id="1" process="A"/>
+    <Node id="2" process="B"/>
+    <!--路由器之间的连接线-->
+    <Link from="0" to="1"/>
+    <Link from="1" to="0"/>
+    <Link from="1" to="2"/>
+  </TopoGraph>
+  <!--每个模型有若干InitialKnowledge-->
+  <InitialKnowledge process="A" attribute="m1"/>
+  <InitialKnowledge process="B" attribute="xxx"/>
+  <!--每个模型有若干ConfidentialProperty(保密性)-->
+  <ConfidentialProperty process="A" attribute="m"/>
+  <!--每个模型有若干AuthenticityProperty-->
+  <AuthenticityProperty>
+    <!--约定上面的Value是发送方，下面的Value是接收方的，判断两个东西相等-->
+    <Value process="A" state="do" attribute="m"/>
+    <Value process="B" state="recv1_msg" attribute="m2"/>
+  </AuthenticityProperty>
+  <!--每个模型有若干SafetyProperty，表示位Invariant和CTL两种-->
+  <Invariant expression="m.leq(3) and a.neq(5)"/>
+  <!--例如F(a==2)，表示最终a==2，要查一下解析-->
+  <!--两种输入方式：1:字符串输入，同上，做解析器；2:用户画一棵树-->
+  <CTL expression="一个CTL表达式"/>
+</xml>
