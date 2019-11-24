@@ -12,8 +12,10 @@
     <Attribute name="sk_A" type="Key"/>
     <Attribute name="NA" type="int"/>
     <Attribute name="m" type="Msg"/>
+    <!--guard中使用的变量都在Attribute里声明过-->
+    <Attribute name="NA1" type="int"/>
     <!--每个Process有若干Signal。Msg是一个类型-->
-    <!--外面定义Relation，绑定两个进程的send和recv函数-->
+    <!--外面定义Channel，绑定两个进程的send和recv函数-->
     <CommMethod name="send_to_b" inout="out" param_type="Msg"/>
     <CommMethod name="recv_from_b" inout="in" param_type="Msg"/>
     <!--每个Process可以使用若干个Method-->
@@ -25,7 +27,7 @@
         <!--如果是用户自定义的Method，这里就放代码内容字符串-->
       </UserCode>
     </Method>
-    <!--每个Process可以有分离定义的若干子自动机-->
+    <!--每个Process可以有嵌套的若干子自动机-->
     <StateMachine name="Recv_Do" initial_state="recv1_msg">
       <State name="recv1_msg"/>
       <State name="do"/>
@@ -101,7 +103,7 @@
     <Value process="B" state="recv1_msg" attribute="m2"/>
   </AuthenticityProperty>
   <!--每个模型有若干SafetyProperty，表示位Invariant和CTL两种-->
-  <Invariant expression="m.leq(3) and a.neq(5)"/>
+  <Invariant expression="A.m.leq(B.n)"/>
   <!--例如F(a==2)，表示最终a==2，要查一下解析-->
   <!--两种输入方式：1:字符串输入，同上，做解析器；2:用户画一棵树-->
   <CTL expression="一个CTL表达式"/>
